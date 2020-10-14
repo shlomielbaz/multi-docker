@@ -9,6 +9,7 @@ before_install:
 
 script:
   - docker run -e CI=true shlomisderot/react-test npm test
+  # - docker run shlomisderot/react-test npm test -- --coverage
 
 after_success:
   - docker build -t shlomisderot/multi-client ./client
